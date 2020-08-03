@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App"> 
       <div className="app_header">
-      <h1>COVID-19 Tracker</h1>
+      <h1>COVID-19 Tracker krishana mattapalli</h1>
     <FormControl className="app_dropdown">
       <Select variant="outlined" onChange={} value={"country"}>
       <MenuItem value="worldwide">Worldwide</MenuItem>
