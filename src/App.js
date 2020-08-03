@@ -11,7 +11,6 @@ function App() {
   const[country, setCountry]= useState('Worldwide');
 
     // https://disease.sh/v3/covid-19/countries
-
     // Useeffect = Runs a piece of code based on a given condition
 
     useEffect(() => {
@@ -30,6 +29,7 @@ function App() {
         })
       }
 
+      
       getCountriesData();
     }, []);
 
