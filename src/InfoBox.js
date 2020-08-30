@@ -2,6 +2,8 @@ import React from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import "./InfoBox.css";
 
+
+
 function InfoBox({ title, cases, total, active, isRed, ...props }) {
   console.log(title, active);
   return (
@@ -11,6 +13,7 @@ function InfoBox({ title, cases, total, active, isRed, ...props }) {
         isRed && "infoBox--red"
       }`}
     >
+      <img src="https://image.flaticon.com/icons/svg/1632/1632670.svg" height="80" width="70"  />
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}
@@ -28,4 +31,3 @@ function InfoBox({ title, cases, total, active, isRed, ...props }) {
 }
 
 export default InfoBox;
-

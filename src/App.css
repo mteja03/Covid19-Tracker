@@ -1,5 +1,6 @@
 *{
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body{
@@ -13,19 +14,32 @@ body{
 }
 
 .app_dropdown{
-  background-color: white;
+  background-color:whitesmoke;
+  width: 250px;
+  text-align: center;
 }
 
 .app_header > h1{
   color: #fc3c3c;
-  font-size: 2rem;
+  font-size: 80px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
 }
 
+.app_header img{
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .app_header{
-  display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  justify-content: space-between;
+  text-align: center;
 }
 
 .app_left{
@@ -35,11 +49,28 @@ body{
 .app_stats{
   display: flex;
   justify-content: space-between;
+  text-align: center;
+
 }
 
 .app_right{
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.app_right h3{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app_right img{
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .app_right .MuiCardContent-root{
@@ -56,8 +87,197 @@ body{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.news h1{
+  color: #fc3c3c;
+  margin-top: 20px;
+  font-size: 50px;
+  text-align: center;
+}
+
+/* ----------- */
+
+.donation{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 800px;
+  margin-top: 60px;
+  text-align: center;
+  border-radius: 10%;
+  
+}
+
+.donation h1{
+    text-align: center;
+    color: #fc3c3c;
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.donation img{
+  height: 400px;
+  width: 80%;
+  border-radius: 10%;
+  box-shadow: 0 0 8px -1px #fc3c3c;
+}
+
+.dlink{
+  text-decoration: none;
+  background-color: #fc3c3c;
+  opacity: 0.5;
+  color: #f5f6fa;
+}
+
+
+.grid1{
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap:50px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.item1{
+  text-align: center;
+  background-color:whitesmoke;
+  box-shadow: 0 0 8px -1px #fc3c3c;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10%;
+}
+
+.item1 img :hover{
+  opacity: 0.5;
+}
+
+.item1 img{
+  height: 250px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----------- */
+
+.precautions h2{
+    text-align: center;
+    color: #fc3c3c;
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.precautions{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.pre{
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.pre img{
+  height: 250px;
+  width: 210px;
+  border-radius: 10%;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.footer{
+  text-align: center;
+  padding-bottom: 20px;
+  margin-top: 60px;
+}
+
+.footer a{
+  text-decoration: none;
+  color: #fc3c3c;
+  font-size: 20px;
+}
+
+.footer a:hover{
+  opacity: 0.5;
+}
+
+.footer img{
+  height: 40px;
+  width: 40px;
+}
+
+/* -------------*/
+
 @media(max-width: 990px){
   .app{
     flex-direction: column;
+  }
+}
+@media(max-width:437px){
+
+  .app_header nav{
+    width: 100%;
+  }
+
+.app_header  h1{
+  font-size: 30px;
+  }
+
+.app_right{
+  margin-top:20px;
+  }
+
+.app_stats{
+  flex-direction: column;
+  justify-content: space-evenly;
+  }
+
+  .news h1{
+    font-size: 25px;
+  }  
+
+  .donation img{
+    height: 200px;
+  }
+
+  .donation h1{
+    font-size: 25px;
+  }
+
+  .grid1{
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 20px;
+  }
+
+  .donation{
+    height: 400px;
+  }
+
+  .item1 img{
+    height: 100px;
+  }
+   
+  .precautions h2{
+    font-size: 25px;
+  }
+  .pre img{
+    height: 100px;
+    width: 100px;
+  }
+
+  .footer a{
+    font-size: 10px;
+  }
+  .footer img{
+    height: 20px;
+    width: 20px;
   }
 }
