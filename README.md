@@ -16,3 +16,6 @@ Project Link:
 https://globalcovidtracker.tk
 https://covid-19-tracker-336dd.web.app/
 
+### 'Material-ui'
+I used material-ui for better design(MenuItem, FormControl, Select, Card, CardContent).
+
