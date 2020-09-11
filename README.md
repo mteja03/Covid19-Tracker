@@ -14,4 +14,5 @@ You will also see any lint errors in the console.
 
 Project Link:
 https://globalcovidtracker.tk
+https://covid-19-tracker-336dd.web.app/
 
