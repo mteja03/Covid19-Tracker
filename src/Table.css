@@ -16,3 +16,9 @@
 .table tr:nth-of-type(odd){
     background-color: #f3f2f8;
 }
+
+.table td img{
+    height: 20px;
+    width: 35px;
+    border-radius: 10%;
+}

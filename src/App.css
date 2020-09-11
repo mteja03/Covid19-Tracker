@@ -7,6 +7,12 @@ body{
   background-color: #f5f6fa;
 }
 
+.table-flag{
+  height: 20px;
+  width: 35px;
+  border-radius: 10%;
+}
+
 .app{
   display: flex;
   justify-content:space-evenly ;
@@ -40,6 +46,7 @@ body{
 .app_header{
   align-items: center;
   text-align: center;
+  justify-content:space-evenly ;
 }
 
 .app_left{

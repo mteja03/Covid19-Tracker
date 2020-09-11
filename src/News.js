@@ -25,13 +25,13 @@ class App extends React.Component {
   render() {
     console.log(this.state);
     return (
-        
-     <div className="App">
+
+      <div className="App">
         {this.state.news.map((item, index, img) => {
           return (
             <div className="App1">
               <h3>{item.title}</h3>
-              <img src={item.img}/>
+              <img src={item.img} />
               <CardActions>
                 <a size="small" color="primary" href={item.link}>
                   Read More
