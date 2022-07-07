@@ -20,7 +20,7 @@ https://covid-19-tracker-336dd.web.app/
 I used material-ui for better design(MenuItem, FormControl, Select, Card, CardContent).
 
 
-##Images
+## Images
 
 Covid Live tracker<br />
 <img width="700" alt="1" src="https://user-images.githubusercontent.com/62012634/177739434-3889b2cc-dac6-4f95-aeeb-0f6a175b63e1.png">
