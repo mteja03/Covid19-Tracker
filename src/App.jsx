@@ -6,7 +6,7 @@ import {
   Select,
   Card,
   CardContent,
-} from "@material-ui/core";
+} from "@mui/material";
 import InfoBox from "./InfoBox";
 import LineGraph from "./LineGraph";
 import Table from "./Table";
@@ -48,28 +48,38 @@ const App = () => {
   const [mapZoom, setMapZoom] = useState(3);
 
   useEffect(() => {
-    fetch("https://disease.sh/v3/covid-19/all")
-      .then((response) => response.json())
-      .then((data) => {
+    const getWorldwideData = async () => {
+      try {
+        const response = await fetch("https://disease.sh/v3/covid-19/all");
+        const data = await response.json();
         setCountryInfo(data);
-      });
+      } catch (error) {
+        console.error("Failed to load worldwide data", error);
+      }
+    };
+
+    getWorldwideData();
   }, []);
 
   useEffect(() => {
     const getCountriesData = async () => {
-      fetch("https://disease.sh/v3/covid-19/countries")
-        .then((response) => response.json())
-        .then((data) => {
-          const countries = data.map((country) => ({
-            name: country.country,
-            value: country.countryInfo.iso2,
-            flag: country.countryInfo.flag,
-          }));
-          let sortedData = sortData(data);
-          setCountries(countries);
-          setMapCountries(data);
-          setTableData(sortedData);
-        });
+      try {
+        const response = await fetch(
+          "https://disease.sh/v3/covid-19/countries"
+        );
+        const data = await response.json();
+        const countries = data.map((country) => ({
+          name: country.country,
+          value: country.countryInfo.iso2,
+          flag: country.countryInfo.flag,
+        }));
+        let sortedData = sortData(data);
+        setCountries(countries);
+        setMapCountries(data);
+        setTableData(sortedData);
+      } catch (error) {
+        console.error("Failed to load countries data", error);
+      }
     };
 
     getCountriesData();
@@ -82,14 +92,21 @@ const App = () => {
       countryCode === "worldwide"
         ? "https://disease.sh/v3/covid-19/all"
         : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
-    await fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setInputCountry(countryCode);
-        setCountryInfo(data);
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setInputCountry(countryCode);
+      setCountryInfo(data);
+      if (countryCode === "worldwide") {
+        setMapCenter([34.80746, -40.4796]);
+        setMapZoom(3);
+      } else {
         setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setMapZoom(4);
-      });
+      }
+    } catch (error) {
+      console.error("Failed to load country data", error);
+    }
   };
 
   return (
