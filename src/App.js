@@ -75,8 +75,6 @@ const App = () => {
     getCountriesData();
   }, []);
 
-  console.log(casesType);
-
   const onCountryChange = async (e) => {
     const countryCode = e.target.value;
 
@@ -99,7 +97,7 @@ const App = () => {
       <div className="app_header">
         <h1>COVID-19 Tracker</h1>
 
-        <div><img src={corona} /></div>
+        <div><img src={corona} alt="Coronavirus animation" /></div>
         <div>
           <FormControl className="app_dropdown">
             <Select
@@ -110,8 +108,7 @@ const App = () => {
             >
               <MenuItem value="worldwide">Worldwide</MenuItem>
               {countries.map((country) => (
-                <MenuItem value={country.value}>
-                  {/* <img className="table-flag" src={country.flag} /> */}
+                <MenuItem key={country.value} value={country.value}>
                   {country.name}
                 </MenuItem>
               ))}
@@ -164,7 +161,7 @@ const App = () => {
           <CardContent>
             <div className="app_information">
               <h3>Live Cases by Country</h3>
-              <img src={world} />
+              <img src={world} alt="Spinning globe" />
               <Table countries={tableData} />
               <h3>Worldwide new {casesType}</h3>
               <LineGraph casesType={casesType} />
@@ -180,19 +177,16 @@ const App = () => {
 
       <div className="donation">
         <h1>Donate Now</h1>
-        <img src={doctors} />
+        <img src={doctors} alt="Doctors illustration" />
         <div className="grid1">
           <div className="item1">
-            <a href="https://apcmrf.ap.gov.in"><img src={ap} /></a>
-            {/* <a href="https://apcmrf.ap.gov.in">Donate</a> */}
+            <a href="https://apcmrf.ap.gov.in"><img src={ap} alt="AP CM Relief Fund" /></a>
           </div>
           <div className="item1">
-            <a href="https://covid19responsefund.org/en/"><img src={who} /></a>
-            {/* <a href="https://covid19responsefund.org/en/">Donate</a> */}
+            <a href="https://covid19responsefund.org/en/"><img src={who} alt="WHO COVID-19 Response Fund" /></a>
           </div>
           <div className="item1">
-            <a href="https://www.akshayapatra.org/covid-relief-services"><img src={patra} /></a>
-            {/* <a id="dlink"href="https://www.akshayapatra.org/covid-relief-services">Donate</a> */}
+            <a href="https://www.akshayapatra.org/covid-relief-services"><img src={patra} alt="Akshaya Patra COVID relief" /></a>
           </div>
         </div>
       </div>
@@ -201,18 +195,18 @@ const App = () => {
       <div className="precautions">
         <h2>Precautions</h2>
         <div className="pre">
-          <img src={a} />
-          <img src={b} />
-          <img src={c} />
-          <img src={d} />
-          <img src={e} />
-          <img src={f} />
-          <img src={g} />
-          <img src={h} />
-          <img src={i} />
-          <img src={j} />
-          <img src={k} />
-          <img src={l} />
+          <img src={a} alt="Precaution 1" />
+          <img src={b} alt="Precaution 2" />
+          <img src={c} alt="Precaution 3" />
+          <img src={d} alt="Precaution 4" />
+          <img src={e} alt="Precaution 5" />
+          <img src={f} alt="Precaution 6" />
+          <img src={g} alt="Precaution 7" />
+          <img src={h} alt="Precaution 8" />
+          <img src={i} alt="Precaution 9" />
+          <img src={j} alt="Precaution 10" />
+          <img src={k} alt="Precaution 11" />
+          <img src={l} alt="Precaution 12" />
         </div>
       </div>
       <div className="footer">

@@ -1,8 +1,6 @@
 import React from "react";
 import "./News.css";
-import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
-import { imageOverlay } from "leaflet";
 
 class App extends React.Component {
   constructor(props) {
@@ -23,15 +21,14 @@ class App extends React.Component {
       });
   }
   render() {
-    console.log(this.state);
     return (
 
       <div className="App">
-        {this.state.news.map((item, index, img) => {
+        {this.state.news.map((item, index) => {
           return (
-            <div className="App1">
+            <div className="App1" key={item.link || index}>
               <h3>{item.title}</h3>
-              <img src={item.img} />
+              <img src={item.img} alt={item.title} />
               <CardActions>
                 <a size="small" color="primary" href={item.link}>
                   Read More

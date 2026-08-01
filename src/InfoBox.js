@@ -5,7 +5,6 @@ import "./InfoBox.css";
 
 
 function InfoBox({ title, cases, total, active, isRed, ...props }) {
-  console.log(title, active);
   return (
     <Card
       onClick={props.onClick}
@@ -13,7 +12,12 @@ function InfoBox({ title, cases, total, active, isRed, ...props }) {
         isRed && "infoBox--red"
       }`}
     >
-      <img src="https://image.flaticon.com/icons/svg/1632/1632670.svg" height="80" width="70"  />
+      <img
+        src="https://image.flaticon.com/icons/svg/1632/1632670.svg"
+        height="80"
+        width="70"
+        alt=""
+      />
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}
